@@ -1,0 +1,53 @@
+//firstCanvas := mainWindow.Canvas()
+
+// first_coclor := color.NRGBA{0, 4, 0, 206}
+
+// text := canvas.NewText("username", first_coclor)
+// // //text.Move(fyne.NewPos(80, 30))
+
+// // // u := widget.NewEntry()
+
+// text2 := canvas.NewText("password", first_coclor)
+// // //text2.Move(fyne.NewPos(80, 65))
+
+// text3 := canvas.NewText("(right)", color.Black)
+// content := container.NewBorder(text, nil, text2, nil, text3)
+
+// p := widget.NewPasswordEntry()
+// u.Move(fyne.NewPos(80, 20))
+// p.Move(fyne.NewPos(150, 70))
+// 设置画布
+
+// lab1 := Widg_label(20, 40, "username")
+// i1 := Inputentry(100, 40)
+// lab2 := Widg_label(20, 100, "password")
+// p := Passentry(100, 100)
+// btn := Serach_btn(100, 150, "搜索", i1)
+
+//var data = []string{"a", "string", "list"}
+
+// //content := container.NewVBox(lab1, lab2, i1, btn)
+
+// // widget.NewButton("Save", func() {
+// // 	log.Println("Content was:", i1.Text)
+// // })
+// // fname := "pic.png"
+// // image := canvas.NewImageFromFile(fname)
+// // image.FillMode = canvas.ImageFillOriginal
+//content := container.NewWithoutLayout(lab1, p, lab2, i1, btn, tabs)
+
+//firstCanvas.SetContent(rect)
+// 设置Label  bible
+//firstCanvas.SetContent(widget.NewLabel("bible"))
+// mainWindow.SetContent(widget.NewLabel("bible"))
+
+//设置会动的时钟
+// clock := widget.NewLabel("")
+// updatetime(clock)
+// // mainWindow.SetContent(clock)
+// firstCanvas.SetContent(clock)
+// go func() {
+// 	for range time.Tick(time.Second) {
+// 		updatetime(clock)
+// 	}
+// }()
