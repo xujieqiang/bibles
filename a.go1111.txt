@@ -1,0 +1,50 @@
+package main
+
+import (
+	"fmt"
+
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/data/binding"
+	"fyne.io/fyne/v2/widget"
+)
+
+var sss = binding.NewStringList()
+
+func main() {
+	myApp := app.New()
+	w := myApp.NewWindow("Simple")
+	w.Resize(fyne.NewSize(800, 700))
+
+	temp := []string{"aaa", "bbbb", "ccccc"}
+	sss.Set(temp)
+
+	//var allw []fyne.CanvasObject
+	source, _ := sss.Get()
+
+	cc := widget.NewListWithData(sss, func() fyne.CanvasObject {
+		return widget.NewLabel("")
+	}, func(di binding.DataItem, co fyne.CanvasObject) {
+		txt, _ := di.(binding.String).Get()
+		co.(*widget.Label).SetText(txt)
+	})
+	for _, val := range source {
+
+		fmt.Println(val)
+
+	}
+
+	kk := widget.NewButton("ok", func() {
+		ttt := []string{"good  ", "=====>", "bad", "lucy"}
+		Change(ttt)
+	})
+
+	content := container.NewBorder(nil, kk, nil, nil, cc)
+	w.SetContent(content)
+	w.ShowAndRun()
+}
+
+func Change(st []string) {
+	sss.Set(st)
+}

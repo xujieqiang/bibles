@@ -1,31 +1,20 @@
 package left
 
 import (
-	"image/color"
-	"log"
-
 	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/widget"
 )
 
-type Lefttabs struct {
-}
+func (l *Leftside) Drawtabs(one, two fyne.CanvasObject) fyne.CanvasObject {
 
-func Newtabs() Lefttabs {
-	return Lefttabs{}
-}
-
-var lss Leftside
-
-func (lt *Lefttabs) Drawtabs() fyne.CanvasObject {
-	shujuan := lss.Drawbookname()
-	if clickId != 0 {
-		log.Println(clickId)
+	if two == nil {
+		two = widget.NewLabel("无内容")
 	}
 	cc := container.NewAppTabs(
-		container.NewTabItem("书卷", shujuan),
-		container.NewTabItem("章节", canvas.NewText("test", color.Black)),
+		container.NewTabItem("书卷", one),
+
+		container.NewTabItem("章节", two),
 	)
 	return cc
 

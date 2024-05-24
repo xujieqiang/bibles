@@ -1,0 +1,9 @@
+
+		bdstr := binding.NewString()
+		bdstr.Set(lab)
+		zhang := widget.NewLabelWithData(bdstr)
+		// zhang := widget.NewButton(lab, func() {
+
+		// 	log.Println("==>", chapn.Chnum)
+		// })
+		zhangjie = append(zhangjie, zhang)
